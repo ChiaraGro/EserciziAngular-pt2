@@ -6,9 +6,9 @@ import { OrderContainerComponent } from './modules/core/order/order-container/or
 
 const routes: Routes = [
   {path: '', component: UserContainerComponent},
-  {path:'**', component: NotFoundComponent},
   {path:'order', component: OrderContainerComponent},
-  {path: 'user', component: UserContainerComponent}
+  {path: 'user', component: UserContainerComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
