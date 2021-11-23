@@ -1,7 +1,7 @@
 import { IUser, Roles, Gender } from './user';
 
 
-export const persons : IUser[] =
+export const PERSONS : IUser[] =
 [
   {
       id: 3487,
