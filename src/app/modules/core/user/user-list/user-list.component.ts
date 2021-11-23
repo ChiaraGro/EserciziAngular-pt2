@@ -1,6 +1,6 @@
 import { IUser } from './../../../../models/user';
 import { PERSONS } from './../../../../models/mock-data';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-list',
@@ -9,17 +9,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  persons = PERSONS;
+  @Output() selectedElement = new EventEmitter<IUser>();
 
+  persons = PERSONS;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onDeleteUser(person: IUser){
+  deleteUser(person: IUser){
     const index = this.persons.indexOf(person);
     this.persons.splice(index, 1)
   }
+
 
 }

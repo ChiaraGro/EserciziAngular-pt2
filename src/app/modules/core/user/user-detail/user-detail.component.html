@@ -1,4 +1,18 @@
-<p>user-detail works!</p>
-<p>{{person?.name}}</p>
+<div class="text-start">
+  <p>id: {{person.id}}</p>
+  <p>Name: {{person.name}}</p>
+  <p>Name: {{person.surname}}</p>
+  <p>Age: {{person.age}}</p>
+  <p>Date of Birth: {{person.dateOfBirth | date:'dd MMM yyyy'}}</p>
+  <p><b>Address:</b></p>
+  <p>City: {{person.address.city}}</p>
+  <p>Street: {{person.address.street}}</p>
+  <p>PostalCode: {{person.address.postalCode}}</p>
+  <p>Role: {{person.role}}</p>
+  <p>username: {{person.username}}</p>
+  <img src="{{person.profilePhotoUrl}}" alt="">
+  <p>{{person.gender}}</p>
 
-<button class="close">Chiudi</button>
+  <button>Chiudi</button>
+
+</div>

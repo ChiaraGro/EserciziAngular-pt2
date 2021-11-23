@@ -10,6 +10,6 @@
   <strong>{{ person.name }} {{ person.surname }}</strong>
   {{ person.age }}
   {{ person.address.city }}
-  <button type="button" class="btn btn-primary btn-sm" (click)="deletedUser(person)">Rimuovi</button>
-  <button type="button" class="btn btn-primary btn-sm" >Visualizza dettagli</button>
+  <button type="button" class="btn btn-primary btn-sm" (click)="deleteUser(person)">Rimuovi</button>
+  <button type="button" class="btn btn-primary btn-sm" (click)="selectUser(person)">Visualizza dettagli</button>
 </div>

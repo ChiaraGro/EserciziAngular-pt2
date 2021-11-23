@@ -4,31 +4,18 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-user-container',
   templateUrl: './user-container.component.html',
-  styleUrls: ['./user-container.component.css']
+  styleUrls: ['./user-container.component.css'],
 })
 export class UserContainerComponent implements OnInit {
+  person!: IUser;
 
+  selectedUser!: IUser;
 
-  selectedUser?: IUser;
-// persona cliccata
+  constructor() {}
 
-  hide = true;
+  ngOnInit(): void {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-
-  selectUser(person: IUser){
+  selectUser(person: IUser) {
     this.selectedUser = person;
-  }
-
-  // closeDetail(value: boolean){
-  //   this.hide = value;
-  // }
-
-  closeDetail(){
-    this.selectedUser = undefined;
   }
 }

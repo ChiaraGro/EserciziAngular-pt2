@@ -8,7 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class UserSingleComponent implements OnInit {
   @Input() person! : IUser;
-  @Output() deleteUser = new EventEmitter();
+  @Output() deletedUser = new EventEmitter();
+  @Output() selectedElement  = new  EventEmitter<IUser>();
 
 
   constructor() { }
@@ -16,9 +17,12 @@ export class UserSingleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deletedUser(person: IUser){
-    this.deleteUser.emit(person)
+  deleteUser(person: IUser){
+    this.deletedUser.emit(person)
   }
 
+  selectUser(value: IUser) {
+    this.selectedElement.emit(value);
+  }
 
 }
