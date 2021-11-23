@@ -1,3 +1,4 @@
+import { IUser } from './../../../../models/user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserContainerComponent implements OnInit {
 
+
+  selectedUser?: IUser;
+// persona cliccata
+
+  hide = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  selectUser(person: IUser){
+    this.selectedUser = person;
+  }
+
+  // closeDetail(value: boolean){
+  //   this.hide = value;
+  // }
+
+  closeDetail(){
+    this.selectedUser = undefined;
+  }
 }
