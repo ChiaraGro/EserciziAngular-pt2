@@ -1,3 +1,4 @@
+import { IUser } from './../../../models/user';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user-single.component.css']
 })
 export class UserSingleComponent implements OnInit {
+  @Input() person! : IUser;
 
 
   constructor() { }
