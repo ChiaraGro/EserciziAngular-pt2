@@ -3,6 +3,6 @@
     <app-user-list (selectedElement)="selectUser($event)"></app-user-list>
   </div>
   <div class="text-dark bg-warning bg-opacity-50 w-75 m-2 text-center h-100" *ngIf="selectedUser">
-    <app-user-detail [person]="selectedUser" ></app-user-detail>
+    <app-user-detail [person]="selectedUser" (closedDetail)="closeDetail()"></app-user-detail>
   </div>
 </div>

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserContainerComponent implements OnInit {
   person!: IUser;
 
-  selectedUser!: IUser;
+  selectedUser?: IUser;
 
   constructor() {}
 
@@ -18,4 +18,9 @@ export class UserContainerComponent implements OnInit {
   selectUser(person: IUser) {
     this.selectedUser = person;
   }
+
+  closeDetail(){
+    this.selectedUser = undefined; //se è undefined, con ngif non lo faccio più visualizzare
+  }
+
 }
