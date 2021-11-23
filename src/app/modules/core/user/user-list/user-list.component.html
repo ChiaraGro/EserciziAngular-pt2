@@ -1,5 +1,5 @@
 <ol>
   <li *ngFor="let person of persons" class="w-75">
-    <app-user-single [person]="person"></app-user-single>
+    <app-user-single [person]="person" (deleteUser)="onDeleteUser($event)"></app-user-single>
    </li>
  </ol>

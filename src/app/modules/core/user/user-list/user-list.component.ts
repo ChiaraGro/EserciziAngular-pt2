@@ -1,3 +1,4 @@
+import { IUser } from './../../../../models/user';
 import { PERSONS } from './../../../../models/mock-data';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -14,6 +15,11 @@ export class UserListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDeleteUser(person: IUser){
+    const index = this.persons.indexOf(person);
+    this.persons.splice(index, 1)
   }
 
 }
