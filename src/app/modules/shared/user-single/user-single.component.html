@@ -1,5 +1,5 @@
 <div
-  class="container p-2 m-4 d-flex align-items-center border"
+  class="container p-2 m-4 d-flex align-items-center justify-content-around border"
   [ngClass]="{
     'border-danger': person.role == 'staff',
     'border-info': person.role == 'admin',
@@ -11,4 +11,5 @@
   {{ person.age }}
   {{ person.address.city }}
   <button type="button" class="btn btn-primary btn-sm" (click)="deletedUser(person)">Rimuovi</button>
+  <button type="button" class="btn btn-primary btn-sm"  >Visualizza dettagli</button>
 </div>
