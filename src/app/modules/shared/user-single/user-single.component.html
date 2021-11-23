@@ -1,6 +1,13 @@
-<div class="p-2 d-flex align-items-center border">
-  <img src="{{person.profilePhotoUrl}}" style="height: 50px; width: 50px;">
-  <strong>{{person.name}} {{person.surname}}</strong>
-  {{person.age}}
-  {{person.address.city}}
+<div
+  class="container p-2 m-4 d-flex align-items-center border"
+  [ngClass]="{
+    'border-danger': person.role == 'staff',
+    'border-info': person.role == 'admin',
+    'border-warning': person.role == 'manager'
+  }"
+>
+  <img src="{{ person.profilePhotoUrl }}" />
+  <strong>{{ person.name }} {{ person.surname }}</strong>
+  {{ person.age }}
+  {{ person.address.city }}
 </div>
