@@ -7,20 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-container.component.css'],
 })
 export class UserContainerComponent implements OnInit {
-  person!: IUser;
-
-  selectedUser?: IUser;
+  person?: IUser;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   selectUser(person: IUser) {
-    this.selectedUser = person;
+    this.person = person;
   }
 
   closeDetail(){
-    this.selectedUser = undefined; //se è undefined, con ngif non lo faccio più visualizzare
+    this.person = undefined; //se è undefined, con ngif non lo faccio più visualizzare
   }
 
 }

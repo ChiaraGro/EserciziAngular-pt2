@@ -2,7 +2,7 @@
   <div class="bg-success p-2 bg-opacity-25 w-75 text-dark text-center m-2 h-100">
     <app-user-list (selectedElement)="selectUser($event)"></app-user-list>
   </div>
-  <div class="text-dark bg-warning bg-opacity-50 w-75 m-2 text-center h-100" *ngIf="selectedUser">
-    <app-user-detail [person]="selectedUser" (closedDetail)="closeDetail()"></app-user-detail>
+  <div class="text-dark bg-warning bg-opacity-50 w-75 m-2 text-center h-100" *ngIf="person">
+    <app-user-detail [person]="person" (closedDetail)="closeDetail()"></app-user-detail>
   </div>
 </div>
