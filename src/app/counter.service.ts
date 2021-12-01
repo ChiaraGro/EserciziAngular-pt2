@@ -12,18 +12,18 @@ export class CounterService {
 
   getValue(){
     if(this.counter >= 0){
-      return this.counter;
+      console.log(this.counter);
     } else{
       this.counter = 0; //riporto il counter a 0
-      return 'Errore';
+      console.log ('Errore');
     }
   }
 
   add(){
-    return this.counter += this.value;
+    console.log (this.counter += this.value);
   }
 
   sub(){
-    return this.counter -= this.value;
+    console.log (this.counter -= this.value);
   }
 }
