@@ -1,0 +1,6 @@
+<div class="container">
+  <button (click)="counterService.sub()" class="my-2 mx-1 btn btn-danger">-</button>
+  <input type="number" [(ngModel)]='counterService.value' placeholder="Inserire valore">
+  <button (click)="counterService.add()" class="my-2 mx-1 btn btn-primary">+</button>
+</div>
+
