@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+   <option label='Nomi'></option>
+     <!-- <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option> -->
+    <option *ngFor="let beer of beerService.beers" value="2"></option>
+    <!-- {{beerService.getBeers()}} -->
+    <!-- {{beerService.beers.id}} -->
+  </select>
+  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+    <option selected>Tipi</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <button type="submit">Search</button>
+</div>
+
+<!-- usare ngfor??? ciclo i nomi esistenti per creare un option -->
+<!-- two way binding? seleziono quello che mi interessa -->
+<!-- al click di submit devo stampare le birre richieste -->

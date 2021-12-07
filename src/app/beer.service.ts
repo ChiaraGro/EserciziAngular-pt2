@@ -3,6 +3,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { IBeer } from './models/beer';
 import { BEERS } from './models/mock-beers';
 
+// import { find } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +22,7 @@ export class BeerService {
   }
 
   selectById(id: number){
-    return this.beers.find(beer => beer.id == id);
+    return this.beers.find(beer => beer.id == id) as IBeer;
   }
   //lo riconosce da sè come observable??
 
