@@ -19,4 +19,20 @@ export class BeerService {
     return this.beers$.asObservable();
   }
 
+  selectById(id: number){
+    return this.beers.find(beer => beer.id == id);
+  }
+  //lo riconosce da sè come observable??
+
+
+  //usare il next? o altre cose di rxjs????
+  //il find esiste ma non funziona
+
+
+  // selectById(id: number){
+  //     return this.beers()
+  //     .map((beer: IBeer[]) => beer.filter((beer: { id: number; }) => beer.id === id));
+
+  // }
+
 }
