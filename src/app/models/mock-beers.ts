@@ -1,3 +1,4 @@
+import { getNumberOfCurrencyDigits } from '@angular/common';
 import { IBeer } from './beer';
 
 export const BEERS: IBeer[] = [
