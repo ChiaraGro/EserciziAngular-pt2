@@ -26,7 +26,7 @@ export class BeerService {
     )
   }
 
-  selectBeer(name: string, type: string){
+  selectBeer(name: string, type: string): Observable<IBeer | undefined>{
     return this.beers$.pipe(
       map((data: IBeer[])=> data.find((beer:IBeer) => beer.name === name && beer.type === type))
     )
