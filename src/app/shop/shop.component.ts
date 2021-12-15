@@ -1,3 +1,4 @@
+import { IBeer } from './../models/beer';
 import { BeerService } from './../beer.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopComponent implements OnInit {
 
-  constructor(public beerService: BeerService) { }
+  beers!: IBeer[];
+
+  name!: string;
+  type!: string;
+  selectedBeer!: IBeer;
+
+  constructor(private beerService: BeerService) { }
 
   ngOnInit(): void {
+    this.beerService.getBeers().subscribe((data: IBeer[]) => this.beers = data);
+    //prendo tutte le birre
   }
+  //spostarlo fuori?
+
 
 }

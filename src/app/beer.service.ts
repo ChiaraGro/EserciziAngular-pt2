@@ -14,8 +14,6 @@ export class BeerService {
   beers$ = new BehaviorSubject<IBeer[]>(this.beers);
 
 
-
-
   constructor() { }
 
   getBeers(): Observable<IBeer[]>{
@@ -28,4 +26,10 @@ export class BeerService {
     )
   }
 
+  selectBeer(name: string, type: string){
+    return this.beers$.pipe(
+      map((data: IBeer[])=> data.find((beer:IBeer) => beer.name === name && beer.type === type))
+    )
+  }
+  //metodo per il select, seleziono sia per nome che per tipo
 }
