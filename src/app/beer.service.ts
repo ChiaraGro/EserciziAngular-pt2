@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IBeer } from './models/beer';
 import { BEERS } from './models/mock-beers';
+import { map } from "rxjs/operators";
 
 // import { find } from 'rxjs/operators';
 
@@ -21,20 +22,10 @@ export class BeerService {
     return this.beers$.asObservable();
   }
 
-  selectById(id: number){
-    return this.beers.find(beer => beer.id == id) as IBeer;
+  getById(id: number): Observable <IBeer | undefined>{
+    return this.beers$.pipe(
+      map((data: IBeer[]) => data.find((beer: IBeer) => beer.id == id))
+    )
   }
-  //lo riconosce da sè come observable??
-
-
-  //usare il next? o altre cose di rxjs????
-  //il find esiste ma non funziona
-
-
-  // selectById(id: number){
-  //     return this.beers()
-  //     .map((beer: IBeer[]) => beer.filter((beer: { id: number; }) => beer.id === id));
-
-  // }
 
 }
