@@ -1,25 +1,30 @@
-<div class="container-fluid">
-  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" [(ngModel)]='name'>
+<!-- form -->
+<!-- <form #form='ngForm'> -->
+<div class="container mt-4">
+  <select class="form-select form-select-lg mb-3 form-control w-25" aria-label=".form-select-lg" [(ngModel)]='name' >
     <option selected disabled>Nome</option>
     <option *ngFor="let beer of beers" value={{beer.name}}>{{beer.name}}</option>
   </select>
-
-  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" [(ngModel)]='type'>
+  <select class="form-select form-select-lg mb-3 form-control  w-25" aria-label=".form-select-lg" [(ngModel)]='type' required>
     <option selected disabled>Tipi</option>
     <option value="small">Small</option>
     <option value="medium">Medium</option>
   </select>
-  <button type="submit" (click)="selectBeer(name, type)">Search</button>
-</div>
+  <button type="submit" (click)="selectBeer(name, type)" class="btn btn-primary">Search</button>
 
-<div class="card flex-column justify-content-center align-items-center m-3">
-  <div *ngIf="selectedBeer; else noBeer" class="text-center">
-    <p>{{selectedBeer?.name}}</p>
-    <p>{{selectedBeer?.type}}</p>
-    <p>{{selectedBeer?.price | currency: 'EUR'}}</p>
+<!-- </form> -->
+
+<!-- card birra -->
+  <div *ngIf="selectedBeer" class="text-center">
+    <div class="card flex-column justify-content-center align-items-center m-3 w-25">
+      <h2>{{selectedBeer?.name}}</h2>
+      <p>Size: {{selectedBeer?.type}}</p>
+      <p>{{selectedBeer?.price | currency: 'EUR'}}</p>
     </div>
-</div>
+  </div>
 
+
+</div>
 <!-- aggiungo ng template, nel caso in cui non esiste la birra col type richiesto.
    Altrimenti aggiungere entrambi i type per tutte le birre -->
-<ng-template #noBeer>Prodotto non disponibile. Prova con un altro formato!</ng-template>
+<!-- <ng-template #noBeer>Prodotto non disponibile. Prova con un altro formato!</ng-template> -->
