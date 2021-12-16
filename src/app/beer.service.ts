@@ -8,7 +8,7 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class BeerService {
-  beers: IBeer[] = BEERS; //da tipizzare?
+  beers: IBeer[] = BEERS;
   beers$ = new BehaviorSubject<IBeer[]>(this.beers);
 
 
