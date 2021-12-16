@@ -13,7 +13,7 @@ export class ShopComponent implements OnInit {
 
   name!: string;
   type!: string;
-  selectedBeer?: IBeer;
+  selectedBeer!: IBeer | undefined;
 
   constructor(private beerService: BeerService) { }
 
@@ -21,7 +21,6 @@ export class ShopComponent implements OnInit {
     this.beerService.getBeers().subscribe((data: IBeer[]) => this.beers = data);
     //prendo tutte le birre
   }
-  //spostarlo fuori?
 
   selectBeer(name: string, type: string){
     this.beerService.selectBeer(name, type).subscribe((data)=> this.selectedBeer = data)
