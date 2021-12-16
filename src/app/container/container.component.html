@@ -1,2 +1,9 @@
 <h2>Ci sono {{properties.length}} proprietà</h2>
-{{properties}}
+{{properties |json}}
+
+<h2>Apis Info</h2>
+<div *ngFor="let property of properties; index as i">
+  <p>Name: {{property}}</p>
+  <p>{{endpoints[i]}}</p>
+
+</div>
