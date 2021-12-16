@@ -1,5 +1,5 @@
+import { CovidService } from './../covid.service';
 import { Component, OnInit } from '@angular/core';
-import { CovidService } from '../covid.service';
 
 @Component({
   selector: 'app-container',
@@ -10,8 +10,12 @@ export class ContainerComponent implements OnInit {
 
   constructor(private covidService: CovidService) { }
 
+  properties: string[] = [];
+
   ngOnInit(): void {
-    this.covidService.getAll().subscribe(data => console.log(data))
+    this.covidService.getAll().subscribe(data => console.log(data));
+
+    this.covidService.getAll().subscribe(data => this.properties = Object.keys(data) )
   }
 
 }
