@@ -2,7 +2,9 @@
 {{properties |json}}
 
 <h2>Apis Info</h2>
-<div *ngFor="let item of endpoints; index as i">
-  <p>{{properties[i]}}</p>
-  <p>{{endpoints[i]}}</p>
+<div *ngFor="let item of endpoints; index as i" class="my-2">
+  <div>
+    <p>Name: {{properties[i]}}</p>
+    <p>Endpoint: {{endpoints[i]}}</p>
+  </div>
 </div>

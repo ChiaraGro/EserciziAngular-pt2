@@ -16,6 +16,7 @@ export class ContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.covidService.getAll().subscribe(data => this.properties = Object.keys(data))
+
     this.covidService.getAll().subscribe(data => this.endpoints = Object.values(data)
     .map((country: any)=> country.Path))
   }
