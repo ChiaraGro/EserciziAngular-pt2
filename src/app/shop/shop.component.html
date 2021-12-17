@@ -1,0 +1,32 @@
+<!-- FORM -->
+<form #form='ngForm'>
+<div class="container mt-4">
+  <select class="form-select form-select-lg mb-3 form-control w-25" name="beerName" aria-label=".form-select-lg" [(ngModel)]='name' required>
+    <option selected disabled>Nome</option>
+    <option *ngFor="let beer of beers" value={{beer.name}}>{{beer.name}}</option>
+  </select>
+
+  <select class="form-select form-select-lg mb-3 form-control  w-25" aria-label=".form-select-lg" name="beerType" [(ngModel)]='type' required>
+    <option selected disabled>Tipi</option>
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+  </select>
+  <button [disabled]="form.invalid" type="submit" (click)="selectBeer(name, type)" class="btn btn-primary">Search</button>
+</div>
+</form>
+
+<!-- CARD BIRRA SELEZIONATA-->
+  <div *ngIf="selectedBeer" class="text-center container mt-4">
+    <div class="card flex-column justify-content-center align-items-center m-3 w-25">
+      <h2>{{selectedBeer.name}}</h2>
+      <p>Size: {{selectedBeer.type}}</p>
+      <p>{{selectedBeer.price | currency: 'EUR'}}</p>
+    </div>
+  </div>
+
+<!-- NG TEMPLATE -->
+
+<!-- <div *ngIf="!selectedBeer && form.valid" class="text-center container mt-4">
+  <p>Prodotto non disponibile. Prova con un altro formato!</p>
+</div>
+-->
