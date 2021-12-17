@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { CovidService } from './../covid.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,16 +15,9 @@ export class ContainerComponent implements OnInit {
   endpoints: string[] = [];
 
   ngOnInit(): void {
-    this.covidService.getAll().subscribe(data =>
-      {for(let el of Object.values(data))
-        {console.log(el.Path);
-        this.endpoints = el.Path}
-
-     }
-      );
-
     this.covidService.getAll().subscribe(data => this.properties = Object.keys(data))
-    this.covidService.getAll().subscribe(data => this.endpoints = Object.values(data))
+    this.covidService.getAll().subscribe(data => this.endpoints = Object.values(data)
+    .map((country: any)=> country.Path))
   }
 
 }

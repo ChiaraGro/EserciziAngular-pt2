@@ -1,15 +1,15 @@
-import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CovidService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
-  getAll(){
+  getAll(): Observable<any>{
     return this.http.get('https://api.covid19api.com/')
   }
 }

@@ -2,8 +2,11 @@
 {{properties |json}}
 
 <h2>Apis Info</h2>
-<div *ngFor="let property of properties; index as i">
+<div *ngFor="let property of properties">
   <p>Name: {{property}}</p>
-  <p>{{endpoints[i]}}</p>
 
+</div>
+
+<div *ngFor="let e of endpoints">
+{{e}}
 </div>
