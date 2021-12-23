@@ -9,12 +9,14 @@
   </div>
 </div>
 
-<div *ngIf="likedJokes.length > 0">
-  {{likedJokes.length}}
-  {{likedJokes}}
+<div *ngIf="likedJokes.length > 0" class="d-flex flex-column">
+  <ol>
+    <li *ngFor="let joke of likedJokes">  {{joke}}</li>
+  </ol>
 </div>
 
 <div *ngIf="disliked.length > 0">
-  {{disliked.length}}
-  {{disliked}}
+  <ol>
+    <li *ngFor="let joke of disliked">  {{joke}}</li>
+  </ol>
 </div>
