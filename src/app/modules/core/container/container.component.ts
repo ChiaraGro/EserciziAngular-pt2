@@ -1,7 +1,8 @@
 import { JokeService } from './../../shared/joke.service';
 import { Component, OnInit } from '@angular/core';
 import { Joke } from 'src/app/models/joke';
-import { interval } from 'rxjs';
+import { interval, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-container',
@@ -12,28 +13,23 @@ export class ContainerComponent implements OnInit {
 
   constructor(private jokeService: JokeService) { }
 
-  // joke!: any;
-  // likedJokes: any[] = [];
-  // disliked: any[]= [];
-
   joke!: Joke;
   likedJokes: Joke[] = [];
   disliked: Joke[]= [];
 
   ngOnInit(): void {
     this.jokeService.getJoke().subscribe((data: Joke) => this.joke = data)
+
+    // setInterval(() => { this.jokeService.getJoke().subscribe((data: Joke) => this.joke = data)}, 5000);
+    //da cambiare con operatore rxjs
   }
-
-
-
-
 
   like(){
     this.likedJokes.push(this.joke)
   }
 
-  // dislike(){
-  //   this.disliked.push(this.joke.joke)
-  // }
+  dislike(){
+    this.disliked.push(this.joke)
+  }
 
 }

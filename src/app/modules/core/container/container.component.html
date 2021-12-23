@@ -5,6 +5,7 @@
   <p>  {{joke}}</p>
   <div>
     <button (click)="like()">Like</button>
+    <button (click)="dislike()">Dislike</button>
   </div>
 </div>
 
@@ -13,3 +14,7 @@
   {{likedJokes}}
 </div>
 
+<div *ngIf="disliked.length > 0">
+  {{disliked.length}}
+  {{disliked}}
+</div>
