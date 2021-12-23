@@ -1,5 +1,7 @@
 import { JokeService } from './../../shared/joke.service';
 import { Component, OnInit } from '@angular/core';
+import { Joke } from 'src/app/models/joke';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-container',
@@ -10,8 +12,28 @@ export class ContainerComponent implements OnInit {
 
   constructor(private jokeService: JokeService) { }
 
+  // joke!: any;
+  // likedJokes: any[] = [];
+  // disliked: any[]= [];
+
+  joke!: Joke;
+  likedJokes: Joke[] = [];
+  disliked: Joke[]= [];
+
   ngOnInit(): void {
-    console.log(this.jokeService.getJoke().subscribe());
+    this.jokeService.getJoke().subscribe((data: Joke) => this.joke = data)
   }
+
+
+
+
+
+  like(){
+    this.likedJokes.push(this.joke)
+  }
+
+  // dislike(){
+  //   this.disliked.push(this.joke.joke)
+  // }
 
 }

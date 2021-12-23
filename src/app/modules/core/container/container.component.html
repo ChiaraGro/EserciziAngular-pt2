@@ -1,1 +1,15 @@
-<p>container works!</p>
+<h1>Joke App</h1>
+
+<div>
+  <h2>Joke attuale</h2>
+  <p>  {{joke}}</p>
+  <div>
+    <button (click)="like()">Like</button>
+  </div>
+</div>
+
+<div *ngIf="likedJokes.length > 0">
+  {{likedJokes.length}}
+  {{likedJokes}}
+</div>
+
