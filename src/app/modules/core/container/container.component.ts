@@ -1,6 +1,6 @@
+import { Joke } from './../../../models/joke';
 import { JokeService } from './../../shared/joke.service';
 import { Component, OnInit } from '@angular/core';
-import { Joke } from 'src/app/models/joke';
 import { interval, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
@@ -17,6 +17,9 @@ export class ContainerComponent implements OnInit {
   likedJokes: Joke[] = [];
   disliked: Joke[]= [];
 
+  goodJoke!: Joke;
+  badJoke!: Joke;
+
   ngOnInit(): void {
     this.jokeService.getJoke().subscribe((data: Joke) => this.joke = data)
 
@@ -32,4 +35,17 @@ export class ContainerComponent implements OnInit {
     this.disliked.push(this.joke)
   }
 
+  notLike(goodJoke: Joke){
+    this.disliked.push(goodJoke);
+
+    const index = this.likedJokes.indexOf(goodJoke);
+    this.likedJokes.splice(index, 1)
+  }
+
+  notDislike(badJoke: Joke){
+    this.likedJokes.push(badJoke);
+
+    const index = this.disliked.indexOf(badJoke);
+    this.disliked.splice(index, 1);
+  }
 }

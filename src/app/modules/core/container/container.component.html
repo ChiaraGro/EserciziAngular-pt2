@@ -1,22 +1,24 @@
-<h1>Joke App</h1>
+<h1 class="text-center">Joke App</h1>
 
-<div>
+<div class="card container">
   <h2>Joke attuale</h2>
   <p>  {{joke}}</p>
-  <div>
+  <div class="text-center">
     <button (click)="like()">Like</button>
     <button (click)="dislike()">Dislike</button>
   </div>
 </div>
 
 <div *ngIf="likedJokes.length > 0" class="d-flex flex-column">
+  <h2>Jokes liked</h2>
   <ol>
-    <li *ngFor="let joke of likedJokes">  {{joke}}</li>
+    <li *ngFor="let goodJoke of likedJokes">  {{goodJoke}} <button (click)="notLike(goodJoke)">Nope</button></li>
   </ol>
 </div>
 
 <div *ngIf="disliked.length > 0">
+  <h2>Jokes not liked</h2>
   <ol>
-    <li *ngFor="let joke of disliked">  {{joke}}</li>
+    <li *ngFor="let badJoke of disliked">{{badJoke}}<button (click)="notDislike(badJoke)">Nope</button></li>
   </ol>
 </div>
